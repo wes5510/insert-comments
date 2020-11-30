@@ -4,16 +4,22 @@ const { program } = require("commander");
 
 program
   .option("-u, --db-url <url>", "mongodb url")
-  .option("-dt, --db-name <name>", "mongodb db name")
+  .option("-d, --db-name <name>", "mongodb db name")
+  .option("-c, --comment <comment>", "inserted comment in db")
   .parse(process.argv);
 
 const URL = program.dbUrl;
 const DB_NAME = program.dbName;
+const COMMENT = program.comment;
 
-const ConnectDB = require("./connectDb");
+const ConnectDB = require('./connectDb');
+const service = require('./service');
 
 const main = async () => {
-  await ConnectDB(URL, DB_NAME);
+  const db = await ConnectDB(URL, DB_NAME);
+
+  const ret = await service.insertComment(db, COMMENT);
+  console.log({ ret });
 };
 
 main()
