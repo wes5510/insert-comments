@@ -1,7 +1,16 @@
-const ConnectDB = require("./connectDb");
+#!/usr/bin/env node
 
-const URL = "mongodb://localhost:27017";
-const DB_NAME = "myproject";
+const { program } = require("commander");
+
+program
+  .option("-u, --db-url <url>", "mongodb url")
+  .option("-dt, --db-name <name>", "mongodb db name")
+  .parse(process.argv);
+
+const URL = program.dbUrl;
+const DB_NAME = program.dbName;
+
+const ConnectDB = require("./connectDb");
 
 const main = async () => {
   await ConnectDB(URL, DB_NAME);

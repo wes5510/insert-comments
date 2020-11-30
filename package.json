@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "./index.js"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   },
   "homepage": "https://github.com/wes5510/insert-comments#readme",
   "dependencies": {
+    "commander": "^6.2.0",
     "mongodb": "^3.6.3"
   },
   "description": ""
