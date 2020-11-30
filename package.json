@@ -1,0 +1,22 @@
+{
+  "name": "mongodb-functions-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wes5510/insert-comments.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wes5510/insert-comments/issues"
+  },
+  "homepage": "https://github.com/wes5510/insert-comments#readme",
+  "dependencies": {
+    "mongodb": "^3.6.3"
+  },
+  "description": ""
+}
